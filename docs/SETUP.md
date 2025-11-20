@@ -10,8 +10,8 @@ Sur GitHub, cliquez sur "Use this template" → "Create a new repository"
 
 Ou en ligne de commande :
 ```bash
-git clone [url-du-nouveau-repo]
-cd [nouveau-repo]
+git clone strategy-pattern-princing
+cd strategy-pattern-princing
 ```
 
 ### 2. Personnaliser le projet
@@ -21,7 +21,7 @@ cd [nouveau-repo]
 cp .env.example .env
 
 # Éditer .env et changer PROJECT_NAME
-# Exemple : PROJECT_NAME=strategy_pattern
+# Exemple : PROJECT_NAME=strategy-pattern-princing
 ```
 
 ### 3. Démarrer l'environnement
@@ -35,7 +35,7 @@ docker-compose exec php composer install
 
 # Créer la base de données
 docker-compose exec php bin/console doctrine:database:create
-docker-compose exec php bin/console doctrine:migrations:migrate -n
+docker-compose exec php bin/console doctrine:mihpunit.dist.xmlgrations:migrate -n
 ```
 
 ### 4. Vérifier l'installation

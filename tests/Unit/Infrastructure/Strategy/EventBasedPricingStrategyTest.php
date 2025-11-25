@@ -10,13 +10,13 @@ use PHPUnit\Framework\TestCase;
 
 final class EventBasedPricingStrategyTest extends TestCase
 {
-    public function test_should_apply_discount_when_event_is_active(): void
+    public function testShouldApplyDiscountWhenEventIsActive(): void
     {
         // Arrange
         $startDate = new \DateTimeImmutable('-1 day');
         $endDate = new \DateTimeImmutable('+1 day');
         $currentDate = new \DateTimeImmutable('now');
-        
+
         $event = new PromotionalEvent(
             'Black Friday',
             'BF2025',
@@ -36,13 +36,13 @@ final class EventBasedPricingStrategyTest extends TestCase
         $this->assertEquals(20, $strategy->getDiscountPercentage());
     }
 
-    public function test_should_not_apply_discount_when_event_is_not_started(): void
+    public function testShouldNotApplyDiscountWhenEventIsNotStarted(): void
     {
         // Arrange
         $startDate = new \DateTimeImmutable('+1 day');
         $endDate = new \DateTimeImmutable('+2 days');
         $currentDate = new \DateTimeImmutable('now');
-        
+
         $event = new PromotionalEvent(
             'Future Sale',
             'FUTURE',
@@ -62,13 +62,13 @@ final class EventBasedPricingStrategyTest extends TestCase
         $this->assertEquals(0, $strategy->getDiscountPercentage());
     }
 
-    public function test_should_not_apply_discount_when_event_is_ended(): void
+    public function testShouldNotApplyDiscountWhenEventIsEnded(): void
     {
         // Arrange
         $startDate = new \DateTimeImmutable('-2 days');
         $endDate = new \DateTimeImmutable('-1 day');
         $currentDate = new \DateTimeImmutable('now');
-        
+
         $event = new PromotionalEvent(
             'Past Sale',
             'PAST',
@@ -88,13 +88,13 @@ final class EventBasedPricingStrategyTest extends TestCase
         $this->assertEquals(0, $strategy->getDiscountPercentage());
     }
 
-    public function test_should_return_event_name(): void
+    public function testShouldReturnEventName(): void
     {
         // Arrange
         $startDate = new \DateTimeImmutable('-1 day');
         $endDate = new \DateTimeImmutable('+1 day');
         $currentDate = new \DateTimeImmutable('now');
-        
+
         $event = new PromotionalEvent(
             'Summer Sale',
             'SUMMER',

@@ -16,7 +16,7 @@ final class VipPricingStrategyTest extends TestCase
         $this->strategy = new VipPricingStrategy();
     }
 
-    public function test_should_apply_15_percent_discount(): void
+    public function testShouldApply15PercentDiscount(): void
     {
         // Arrange
         $amount = 100.0;
@@ -28,7 +28,7 @@ final class VipPricingStrategyTest extends TestCase
         $this->assertEquals(85.0, $result);
     }
 
-    public function test_should_handle_decimal_precision(): void
+    public function testShouldHandleDecimalPrecision(): void
     {
         // Arrange
         $amount = 99.99;
@@ -40,17 +40,17 @@ final class VipPricingStrategyTest extends TestCase
         $this->assertEquals(84.99, round($result, 2));
     }
 
-    public function test_should_return_vip_as_name(): void
+    public function testShouldReturnVipAsName(): void
     {
         $this->assertEquals('VIP', $this->strategy->getName());
     }
 
-    public function test_should_return_15_as_discount_percentage(): void
+    public function testShouldReturn15AsDiscountPercentage(): void
     {
         $this->assertEquals(15, $this->strategy->getDiscountPercentage());
     }
 
-    public function test_should_handle_zero_amount(): void
+    public function testShouldHandleZeroAmount(): void
     {
         $result = $this->strategy->calculate(0.0);
         $this->assertEquals(0.0, $result);

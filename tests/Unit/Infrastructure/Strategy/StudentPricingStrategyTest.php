@@ -16,7 +16,7 @@ final class StudentPricingStrategyTest extends TestCase
         $this->strategy = new StudentPricingStrategy();
     }
 
-    public function test_should_apply_10_percent_discount(): void
+    public function testShouldApply10PercentDiscount(): void
     {
         // Arrange
         $amount = 100.0;
@@ -28,7 +28,7 @@ final class StudentPricingStrategyTest extends TestCase
         $this->assertEquals(90.0, $result);
     }
 
-    public function test_should_handle_decimal_precision(): void
+    public function testShouldHandleDecimalPrecision(): void
     {
         // Arrange
         $amount = 99.99;
@@ -40,17 +40,17 @@ final class StudentPricingStrategyTest extends TestCase
         $this->assertEquals(89.99, round($result, 2));
     }
 
-    public function test_should_return_student_as_name(): void
+    public function testShouldReturnStudentAsName(): void
     {
         $this->assertEquals('Student', $this->strategy->getName());
     }
 
-    public function test_should_return_10_as_discount_percentage(): void
+    public function testShouldReturn10AsDiscountPercentage(): void
     {
         $this->assertEquals(10, $this->strategy->getDiscountPercentage());
     }
 
-    public function test_should_handle_zero_amount(): void
+    public function testShouldHandleZeroAmount(): void
     {
         $result = $this->strategy->calculate(0.0);
         $this->assertEquals(0.0, $result);

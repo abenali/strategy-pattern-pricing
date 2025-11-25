@@ -19,7 +19,7 @@ jobs:
             postgres:
                 image: postgres:15-alpine
                 env:
-                    POSTGRES_DB: app_test
+                    POSTGRES_DB: app
                     POSTGRES_USER: app
                     POSTGRES_PASSWORD: app
                 options: >-

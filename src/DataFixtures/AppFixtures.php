@@ -103,7 +103,7 @@ class AppFixtures extends Fixture
 
         // ========== PROMOTIONAL EVENTS ==========
 
-        // Black Friday (fin novembre)
+        // Black Friday (fin novembre 2024)
         $blackFriday = new PromotionalEvent(
             name: 'Black Friday 2024',
             code: 'black-friday',
@@ -114,18 +114,18 @@ class AppFixtures extends Fixture
         $manager->persist($blackFriday);
         $this->addReference('event-black-friday', $blackFriday);
 
-        // Summer Sale (juillet-août)
+        // Summer Sale (juillet-août 2025)
         $summerSale = new PromotionalEvent(
-            name: 'Summer Sale 2024',
+            name: 'Summer Sale 2025',
             code: 'summer-sale',
             discountPercentage: 20,
-            startDate: new \DateTimeImmutable('2024-07-01'),
-            endDate: new \DateTimeImmutable('2024-08-31')
+            startDate: new \DateTimeImmutable('2025-07-01'),
+            endDate: new \DateTimeImmutable('2025-08-31')
         );
         $manager->persist($summerSale);
         $this->addReference('event-summer-sale', $summerSale);
 
-        // Cyber Monday
+        // Cyber Monday 2024
         $cyberMonday = new PromotionalEvent(
             name: 'Cyber Monday 2024',
             code: 'cyber-monday',
@@ -146,5 +146,14 @@ class AppFixtures extends Fixture
         $manager->persist($pastEvent);
 
         $manager->flush();
+
+        // Afficher les IDs pour les tests
+        echo "\n=== FIXTURES LOADED ===\n";
+        echo 'Standard Customer ID: '.$standardCustomer->getId()."\n";
+        echo 'VIP Customer ID: '.$vipCustomer->getId()."\n";
+        echo 'Student Customer ID: '.$studentCustomer->getId()."\n";
+        echo 'Laptop Product ID: '.$laptop->getId()."\n";
+        echo 'Smartphone Product ID: '.$smartphone->getId()."\n";
+        echo "======================\n\n";
     }
 }

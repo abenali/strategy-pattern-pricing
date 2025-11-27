@@ -15,6 +15,20 @@ services:
     # this creates a service per class whose id is the fully-qualified class name
     App\:
         resource: '../src/'
+        exclude:
+            - '../src/DependencyInjection/'
+            - '../src/Domain/Entity/'
+            - '../src/Kernel.php'
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
+    # Bind repository interfaces to implementations
+
+    App\Domain\Repository\CustomerRepositoryInterface:
+        class: App\Infrastructure\Doctrine\Repository\CustomerRepository
+
+    App\Domain\Repository\ProductRepositoryInterface:
+        class: App\Infrastructure\Doctrine\Repository\ProductRepository
+
+    App\Domain\Repository\PromotionalEventRepositoryInterface:
+        class: App\Infrastructure\Doctrine\Repository\PromotionalEventRepository

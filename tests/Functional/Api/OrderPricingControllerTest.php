@@ -14,9 +14,9 @@ class OrderPricingControllerTest extends WebTestCase
         $client = static::createClient();
 
         $data = [
-            'customerId' => 'f3bbc09f-7160-4b5a-ac50-e67ff736275c',
+            'customerId' => '3515465c-3c4d-44c8-a26c-6e3be8476a3c',
             'items' => [
-                ['productId' => 'cbd32b35-ac2c-4405-a135-837902d54516', 'quantity' => 2],
+                ['productId' => 'd5394396-0fd0-4951-afc3-13e5a91ff69d', 'quantity' => 2],
             ],
         ];
 
@@ -45,9 +45,9 @@ class OrderPricingControllerTest extends WebTestCase
         $client = static::createClient();
 
         $data = [
-            'customerId' => '624a5d62-f7ad-46a2-be6b-8695e857aebe',
+            'customerId' => '3beedbda-cf5d-488b-b445-cdcf1a92281a',
             'items' => [
-                ['productId' => '656608b3-420b-4973-b0cc-fc04e2a773d6', 'quantity' => 2],
+                ['productId' => 'd5394396-0fd0-4951-afc3-13e5a91ff69d', 'quantity' => 2],
             ],
             'strategies' => ['vip'],
         ];
@@ -77,9 +77,9 @@ class OrderPricingControllerTest extends WebTestCase
         $client = static::createClient();
 
         $data = [
-            'customerId' => 'd0c284c8-02fd-4c5b-994a-f66822e165d3',
+            'customerId' => '3beedbda-cf5d-488b-b445-cdcf1a92281a',
             'items' => [
-                ['productId' => '5ea229d3-6065-4b85-8f38-424465f7aac3', 'quantity' => 2],
+                ['productId' => 'd5394396-0fd0-4951-afc3-13e5a91ff69d', 'quantity' => 2],
             ],
             'strategies' => ['INVALID_STRATEGY'],
         ];
